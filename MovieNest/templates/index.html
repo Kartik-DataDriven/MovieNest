@@ -1,0 +1,385 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommender System</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background-color: #333;
+            color: #ffffff;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .recommended-movies {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .movie {
+            width: calc(20% - 10px);
+            margin-bottom: 20px;
+            background-color: #333;
+            border: 1px solid #444;
+            border-radius: 4px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .movie p {
+            font-weight: bold;
+        }
+
+        .movie img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Recommender System</h1>
+    <form method="post">
+        <label for="selected_movie">Select a movie:</label>
+        <select name="selected_movie" id="selected_movie">
+            {% for movie in movie_list %}
+            <option value="{{ movie }}">{{ movie }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Show Recommendation">
+    </form>
+
+    {% if recommended_movie_names %}
+    <h2>Recommended Movies:</h2>
+    <div class="recommended-movies">
+        {% for i in range(5) %}
+        <div class="movie">
+            <p>{{ recommended_movie_names[i] }}</p>
+            <img src="{{ recommended_movie_posters[i] }}" alt="{{ recommended_movie_names[i] }}">
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</body>
+</html>
+
+
+ -->
+<!-- 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommender System</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background-color: #333;
+            color: #ffffff;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .recommended-movies {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .movie {
+            width: calc(20% - 10px);
+            margin-bottom: 20px;
+            background-color: #333;
+            border: 1px solid #444;
+            border-radius: 4px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .movie p {
+            font-weight: bold;
+        }
+
+        .movie img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Recommender System</h1>
+    <form method="post">
+        <label for="selected_movie">Search for a movie:</label>
+        <input type="text" name="selected_movie" id="selected_movie" placeholder="Enter a movie title">
+        <input type="submit" value="Search">
+    </form>
+
+    {% if recommended_movie_names %}
+    <h2>Recommended Movies:</h2>
+    <div class="recommended-movies">
+        {% for i in range(5) %}
+        <div class="movie">
+            <p>{{ recommended_movie_names[i] }}</p>
+            <img src="{{ recommended_movie_posters[i] }}" alt="{{ recommended_movie_names[i] }}">
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</body>
+</html>
+ -->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommender System</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background-color: #333;
+            color: #ffffff;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            padding: 5px;
+            cursor: pointer;
+            background-color: #444;
+            border: 1px solid #333;
+            border-radius: 4px;
+        }
+
+        ul li:hover {
+            background-color: #555;
+        }
+
+        .recommended-movies {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .movie {
+            width: calc(20% - 10px);
+            margin-bottom: 20px;
+            background-color: #333;
+            border: 1px solid #444;
+            border-radius: 4px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .movie p {
+            font-weight: bold;
+        }
+
+        .movie img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Recommender System</h1>
+    <form method="post">
+        <label for="selected_movie">Search for a movie:</label>
+        <input type="text" name="selected_movie" id="selected_movie" placeholder="Enter a movie title">
+        <ul id="suggestions"></ul>
+        <input type="submit" value="Search">
+    </form>
+
+    {% if recommended_movie_names %}
+    <h2>Recommended Movies:</h2>
+    <div class="recommended-movies">
+        {% for i in range(5) %}
+        <div class="movie">
+            <p>{{ recommended_movie_names[i] }}</p>
+            <img src="{{ recommended_movie_posters[i] }}" alt="{{ recommended_movie_names[i] }}">
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <script>
+        const searchInput = document.getElementById("selected_movie");
+        const suggestionsList = document.getElementById("suggestions");
+    
+        searchInput.addEventListener("input", function () {
+            const query = searchInput.value.trim();
+            if (query !== "") {
+                // Make an AJAX request to get movie suggestions
+                fetch(`/suggest?query=${query}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Clear the previous suggestions
+                        suggestionsList.innerHTML = "";
+    
+                        // Display the new suggestions
+                        data.suggestions.forEach(suggestion => {
+                            const li = document.createElement("li");
+                            li.textContent = suggestion;
+                            suggestionsList.appendChild(li);
+                        });
+                    })
+                    .catch(error => {
+                        console.error("Error fetching suggestions:", error);
+                    });
+            } else {
+                // Clear the suggestions list if the input is empty
+                suggestionsList.innerHTML = "";
+            }
+        });
+    
+        suggestionsList.addEventListener("click", function (event) {
+            const selectedSuggestion = event.target.textContent;
+            searchInput.value = selectedSuggestion;
+            suggestionsList.innerHTML = "";  // Clear the suggestions list
+        });
+    </script>
+</body>
+</html>
